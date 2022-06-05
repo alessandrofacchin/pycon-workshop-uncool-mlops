@@ -79,19 +79,19 @@ stages:
           output_folder: outs/train
           metrics_folder: outs/train_metrics
           pretrained_model: MoritzLaurer/xtremedistil-l6-h256-mnli-fever-anli-ling-binary
-          epochs: 8
+          epochs: 10
     outs:
     - path: outs/train
-      md5: d12203c576dbf2e64ba844b705ea4961.dir
+      md5: 58e81b4b36ae8422fa847b48845785e3.dir
       size: 51985899
       nfiles: 7
     - path: outs/train_metrics
-      md5: a7f78dc7df3c5b8021bbd353a21fe31c.dir
-      size: 1666
+      md5: dda52c29b9c629a8d79e443ceb82fb63.dir
+      size: 1977
       nfiles: 10
     - path: outs/train_metrics.json
-      md5: 485bfe8c5a44f5dff36ddafb1a87fc79
-      size: 348
+      md5: 5496869763fae7038df63e3a17d2a994
+      size: 350
   eval:
     cmd: python src/eval.py outs/split/val.json outs/train outs/eval
     deps:
@@ -99,7 +99,7 @@ stages:
       md5: eb060aec15bf5558934b343dd2b39efa
       size: 1277
     - path: outs/train
-      md5: d12203c576dbf2e64ba844b705ea4961.dir
+      md5: 58e81b4b36ae8422fa847b48845785e3.dir
       size: 51985899
       nfiles: 7
     - path: src/eval.py
